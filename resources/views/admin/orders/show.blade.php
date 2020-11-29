@@ -107,6 +107,14 @@
                             {{ $order->customer->first_name ?? '' }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.order.fields.pais') }}
+                        </th>
+                        <td>
+                            {{ App\Models\Order::PAIS_SELECT[$order->pais] ?? '' }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

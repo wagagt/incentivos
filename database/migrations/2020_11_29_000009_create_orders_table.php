@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('verification')->nullable();
             $table->string('tracking_code')->unique();
             $table->longText('comments')->nullable();
+            $table->string('pais')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

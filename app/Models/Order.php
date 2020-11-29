@@ -21,6 +21,11 @@ class Order extends Model implements HasMedia
         'result_pdf',
     ];
 
+    const PAIS_SELECT = [
+        'GT' => 'Guatemala',
+        'SV' => 'El Salvador',
+    ];
+
     protected $dates = [
         'date',
         'created_at',
@@ -38,6 +43,7 @@ class Order extends Model implements HasMedia
         'tracking_code',
         'comments',
         'customer_id',
+        'pais',
         'created_at',
         'updated_at',
         'deleted_at',
