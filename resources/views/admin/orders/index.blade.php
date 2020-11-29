@@ -53,6 +53,9 @@
                             {{ trans('cruds.crmCustomer.fields.last_name') }}
                         </th>
                         <th>
+                            {{ trans('cruds.order.fields.pais') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -96,6 +99,9 @@
                             </td>
                             <td>
                                 {{ $order->customer->last_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ App\Models\Order::PAIS_SELECT[$order->pais] ?? '' }}
                             </td>
                             <td>
                                 @can('order_show')

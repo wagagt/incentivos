@@ -115,6 +115,21 @@
                 <span class="help-block">{{ trans('cruds.order.fields.customer_helper') }}</span>
             </div>
             <div class="form-group">
+                <label>{{ trans('cruds.order.fields.pais') }}</label>
+                <select class="form-control {{ $errors->has('pais') ? 'is-invalid' : '' }}" name="pais" id="pais">
+                    <option value disabled {{ old('pais', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    @foreach(App\Models\Order::PAIS_SELECT as $key => $label)
+                        <option value="{{ $key }}" {{ old('pais', 'GT') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('pais'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('pais') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.order.fields.pais_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
